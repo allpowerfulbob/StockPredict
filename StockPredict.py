@@ -1,18 +1,14 @@
 # Import required libraries
-import numpy as np
+import streamlit as st
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sb
-
+from datetime import datetime, timedelta
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-from xgboost import XGBClassifier
-from sklearn import metrics
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error
+import plotly.graph_objects as go
 
-import warnings
-warnings.filterwarnings('ignore')
-
-df = pd.read_csv('c:/users/allpo/desktop/content/Tesla.csv')
-df.head()
+# Load Data file
+data = pd.read_csv('c:/users/allpo/desktop/content/stock_data.csv', parse_dates=['Date'])
+data.set_index('Date', inplace=True)
