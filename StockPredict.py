@@ -14,6 +14,5 @@ from sklearn import metrics
 import warnings
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('/users/allpo/desktop/content/Tesla.csv')
+df = pd.read_csv('c:/users/allpo/desktop/content/Tesla.csv')
 df.head()
-df.shape
