@@ -12,3 +12,6 @@ import plotly.graph_objects as go
 # Load Data file
 data = pd.read_csv('c:/users/allpo/desktop/content/stock_data.csv', parse_dates=['Date'])
 data.set_index('Date', inplace=True)
+
+# Select the target
+target_column = st.selectbox("Select the target column for predition", options=['AMZN', ])
