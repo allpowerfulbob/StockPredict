@@ -14,4 +14,38 @@ data = pd.read_csv('c:/users/allpo/desktop/content/stock_data.csv', parse_dates=
 data.set_index('Date', inplace=True)
 
 # Select the target
-target_column = st.selectbox("Select the target column for predition", options=['AMZN', ])
+# Change this based on the target column
+target_column = st.selectbox("Select the target column for predition", options=['AMZN', 'DPZ', 'BTC',
+                                                                                'NFLX'])
+x = data[['DPZ', 'BTC', 'NFLX']]
+y = data[target_column]
+
+# Split the data
+x_train, x_val, y_train, y_val = train_test_split(x, y, test_size=0.2, random_state=42)
+
+# Train a simple model
+model = RandomForestRegressor(n_estimaotrs=100, random_state=42)
+model.fix(x_train, y_train)
+
+# Make predictions on validation data
+val_predictions = model.predict(x_val)
+mse = mean_squared_error(y_val, val_predictions)
+st.write(f"Validation Mean Squared Error: {mse}")
+
+# Sidebar for user input to select forecast horizon
+st.sidebar.header("Forecast Settings")
+future_days = st.sidebar.slider("Select Future Prediction Days (1-30)", min_value=1, max_value=30,
+                                value=7)
+
+# Predict future stock prices for the selected period
+last_known_date = data.index[-1]
+future_dates = [last_known_date + timedelta(days=i) for i in range(1, future_days + 1)]
+future_predictions = model.predict(x.tail(future_days))
+
+# Plotting
+st.header(f"{target_column} Stock Price Prediction")
+st.write(f"Forecasting the nest {future_days} days")
+
+# Create figure
+fig = go.Figure()
+
