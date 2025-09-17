@@ -9,8 +9,3 @@ data = r.csv()
 
 # print the data
 print(data)
-
-# Write to csv
-with open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='') as amzn_stock_data:
-    writer = csv.writer(amzn_stock_data)
-    writer.writerows(data)
