@@ -24,7 +24,7 @@ y = data[target_column]
 x_train, x_val, y_train, y_val = train_test_split(x, y, test_size=0.2, random_state=42)
 
 # Train a simple model
-model = RandomForestRegressor(n_estimaotr=100, random_state=42)
+model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(x_train, y_train)
 
 # Make predictions on validation data
