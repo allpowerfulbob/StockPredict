@@ -16,7 +16,7 @@ cw = csv.writer(df)
 c = 0
 for stock_data in data:
     if c == 0:
-        header = data.keys()
+        header = stock_data.keys()
         cw.writerow(header)
         c += 1
         cw.writerow(stock_data.values())
