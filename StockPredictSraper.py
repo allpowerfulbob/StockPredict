@@ -10,19 +10,11 @@ url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMZN&
 r = requests.get(url)
 data = r.json()
 
-# Dump data to a json file
-with open("c:/users/allpo/desktop/content/amzn_stock_data.json", "w") as f:
-    json.dump(data, f)
-
-# Transfer json file to csv
-with open("c:/users/allpo/desktop/content/amzn_stock_data.json") as jf:
-    jd = json.load(jf)
-
 df = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
 cw = csv.writer(df)
 
 c = 0
-for data in jd:
+for stock_data in data:
     if c == 0:
         header = data.keys()
         cw.writerow(header)
