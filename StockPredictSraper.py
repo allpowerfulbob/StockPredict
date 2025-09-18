@@ -11,7 +11,8 @@ r = requests.get(url)
 data = r.json()
 
 df = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
-cw = csv.writer(data)
+fieldnames = ['Open', 'High', 'Low', 'Close', 'Volume']
+cw = csv.DictWriter(data, fieldnames=fieldnames)
 
 c = 0
 for stock_data in data:
