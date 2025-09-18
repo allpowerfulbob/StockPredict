@@ -12,7 +12,7 @@ data = r.json()
 
 df = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
 fieldnames = ['Open', 'High', 'Low', 'Close', 'Volume']
-cw = csv.DictWriter(data, fieldnames=fieldnames)
+cw = csv.DictWriter(df, fieldnames=fieldnames)
 
 c = 0
 for stock_data in data:
