@@ -10,9 +10,14 @@ url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMZN&
 r = requests.get(url)
 data = r.json()
 
+if isinstance(data, list) and all(isinstance(item, dict) for item in data):
+    else:
+    print("Data is in the incorrect format")
+
+
 df = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
 fieldnames = ['Open', 'High', 'Low', 'Close', 'Volume']
-cw = csv.DictWriter(df, fieldnames=fieldnames, extrasaction='ignore')
+cw = csv.DictWriter(df, fieldnames=fieldnames)
 
 c = 0
 for stock_data in data:
