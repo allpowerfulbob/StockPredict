@@ -19,6 +19,6 @@ for stock_data in data:
         header = data.keys()
         cw.writerow(header)
         c += 1
-        cw.writerow(data.values())
+        cw.writerow(stock_data.values())
 
 df.close
