@@ -11,7 +11,7 @@ r = requests.get(url)
 data = r.json()
 
 df = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
-cw = csv.writer(df)
+cw = csv.writer(data)
 
 c = 0
 for stock_data in data:
