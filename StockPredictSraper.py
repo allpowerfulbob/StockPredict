@@ -20,4 +20,10 @@ for stock_data in data:
         c += 1
         cw.writerow(stock_data.values())
 
-data.close
+    data.close
+
+else: dp = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'a', newline='')
+writer_obj = csv.writer(dp)
+writer_obj.writerow(data)
+
+dp.close
