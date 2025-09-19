@@ -6,9 +6,9 @@ import json
 
 
 # url to download data, replace the API Key with your own
-url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMZN&apikey=QJZ37Q0YG6D3I1Y8&datatype=csv'
+url = 'https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&date=2017-11-15&apikey=QJZ37Q0YG6D3I1Y&datatype=csv'
 r = requests.get(url)
-data = r.json()
+data = pd.read_csv()
 
 df = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
 fieldnames = ['Open', 'High', 'Low', 'Close', 'Volume']
