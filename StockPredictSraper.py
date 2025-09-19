@@ -10,8 +10,7 @@ url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AM
 r = requests.get(url)
 data = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
 
-cw = csv.Writer(data)
-cw.writeheader()
+cw = csv.writer(data)
 
 c = 0
 for stock_data in data:
