@@ -22,8 +22,8 @@ for stock_data in data:
 
     data.close
 
-else: dp = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'a', newline='')
-writer_obj = csv.writer(dp)
+else: ad = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'a', newline='')
+writer_obj = csv.writer(ad)
 writer_obj.writerow(data)
 
-dp.close
+ad.close
