@@ -3,11 +3,16 @@ import requests
 import csv
 import pandas as pd
 import json
+import urllib.parse
 
+# Ask user to insert a stock to track
+params = input("What stock would you like to get data for?")
 
+# Use urllib to amend the url with params
+passed_params = urllib.parse.urlencode(params)
+final_url = f'{https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=}?{passed_params}&interval=60min&apikey=QJZ37Q0YG6D3I1Y&datatype=csv'
 # url to download data, replace the API Key with your own
-url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AMZN&interval=60min&apikey=QJZ37Q0YG6D3I1Y&datatype=csv'
-r = requests.get(url)
+r = requests.get(final_url)
 data = open('c:/users/allpo/desktop/content/amzn_stock_data.csv', 'w', newline='')
 
 cw = csv.writer(data)
