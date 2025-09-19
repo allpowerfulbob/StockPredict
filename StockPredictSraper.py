@@ -6,7 +6,7 @@ import json
 
 
 # url to download data, replace the API Key with your own
-url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMZN&apikey=QJZ37Q0YG6D3I1Y8'
+url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMZN&apikey=QJZ37Q0YG6D3I1Y8&datatype=csv'
 r = requests.get(url)
 data = r.json()
 
