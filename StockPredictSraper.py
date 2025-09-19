@@ -6,7 +6,7 @@ import json
 
 
 # url to download data, replace the API Key with your own
-url = 'https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=IBM&date=2017-11-15&apikey=QJZ37Q0YG6D3I1Y&datatype=csv'
+url = 'https://www.alphavantage.co/query?function=HISTORICAL_OPTIONS&symbol=AMZN&date=2017-11-15&apikey=QJZ37Q0YG6D3I1Y&datatype=csv'
 r = requests.get(url)
 data = pd.read_csv()
 
