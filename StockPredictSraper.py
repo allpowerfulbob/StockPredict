@@ -21,4 +21,4 @@ for stock_data in data:
         c += 1
         cw.writerow(stock_data.values())
 
-df.close
+data.close
