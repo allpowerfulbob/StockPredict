@@ -7,7 +7,7 @@ import urllib.parse
 import re
 
 # Ask user to insert a stock to track
-params = input("What stock would you like to get data for?", re.IGNORECASE)
+params = input("What stock would you like to get data for?" re.IGNORECASE)
 
 # Use urllib to amend the url with params
 passed_params = urllib.parse.urlencode(params)
