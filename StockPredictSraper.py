@@ -7,10 +7,10 @@ import urllib.parse
 import re
 
 # Ask user to insert a stock to track
-params = input("What stock would you like to get data for?" re.IGNORECASE)
+params = input("What stock would you like to get data for?") 
 
 # Use urllib to amend the url with params
-passed_params = urllib.parse.urlencode(params)
+passed_params = urllib.parse.urlencode(params, re.IGNORECASE)
 first_part_final_url = str('{https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=}')
 second_part_final_url = str(f'&interval=60min&apikey=QJZ37Q0YG6D3I1Y&datatype=csv')
 final_url = (first_part_final_url) + (passed_params) + (second_part_final_url)
