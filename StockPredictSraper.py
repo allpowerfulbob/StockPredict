@@ -6,11 +6,12 @@ import json
 import urllib.parse
 
 # Ask user to insert a stock to track
-params = input({"What stock would you like to get data for?"}) 
+params = input("What stock would you like to get data for?") 
 uppercase_params = params.upper
+params_dict = {uppercase_params}
 
 # Use urllib to amend the url with params
-passed_params = urllib.parse.urlencode(uppercase_params)
+passed_params = urllib.parse.urlencode(params_dict)
 first_part_final_url = str('{https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=}')
 second_part_final_url = str(f'&interval=60min&apikey=QJZ37Q0YG6D3I1Y&datatype=csv')
 final_url = (first_part_final_url) + (passed_params) + (second_part_final_url)
