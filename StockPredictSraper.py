@@ -6,7 +6,7 @@ import json
 import urllib.parse
 
 # Ask user to insert a stock to track
-params = input("What stock would you like to get data for?") 
+params = input(["What stock would you like to get data for?"]) 
 uppercase_params = params.upper
 
 # Use urllib to amend the url with params
