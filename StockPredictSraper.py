@@ -4,7 +4,6 @@ import csv
 import pandas as pd
 import json
 import urllib.parse
-import re
 
 # Ask user to insert a stock to track
 params = input("What stock would you like to get data for?") 
